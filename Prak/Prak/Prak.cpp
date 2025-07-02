@@ -6,23 +6,34 @@
 #include "file.h"
 
 int main() {
-    system("chcp 1251 > nul"); // это для русского языка
+    system("chcp 1251 > nul");
     setlocale(LC_ALL, "RUS");
 
-    int choice; // цифра выбора
-    int size = 0; // размер массива
-    int min, max; // для границ максимума и минимума в случайном наборе чисел
-    int* original = NULL, * sorted = NULL; //для оригинала и отсортированного
+    int choice, size = 0, min, max;
+    int* original = NULL;
     SortResult result;
-    char filename[100]; //имя файла для записи
+    char filename[100];
 
     while (1) {
         printf("\n=== МЕНЮ ===\n");
+
+        // Отображение текущего массива
+        if (original && size > 0) {
+            printf("Текущий массив (%d элементов): ", size);
+            int display_count = size > 30 ? 30 : size;
+            for (int i = 0; i < display_count; i++) {
+                printf("%d ", original[i]);
+            }
+            if (size > 30) printf("...");
+            printf("\n");
+        }
+
         printf("1. Создать массив (ручной ввод)\n");
         printf("2. Создать массив (случайные числа)\n");
-        printf("3. Сохранить результаты\n");
-        printf("4. Загрузить массив из файла\n");
-        printf("5. Выход\n");
+        printf("3. Выполнить сортировку Шелла\n");
+        printf("4. Сохранить массив в файл\n");
+        printf("5. Загрузить массив из файла\n");
+        printf("6. Выход\n");
         printf("Выберите действие: ");
 
         if (scanf_s("%d", &choice) != 1) {
@@ -38,14 +49,8 @@ int main() {
                 while (getchar() != '\n');
                 continue;
             }
-            original = create_array_manual(size); // возвращаем указатель на созданный массив
-            if (original) {
-                sorted = (int*)malloc(size * sizeof(int));
-                for (int i = 0; i < size; i++) 
-                    sorted[i] = original[i];
-                result = shell_sort(sorted, size);
-                printf("Перестановок: %d, Время: %.6f мкс\n", result.swaps, result.time_mcs);
-            }
+            if (original) free(original);
+            original = create_array_manual(size);
         }
         else if (choice == 2) {
             printf("Размер массива: ");
@@ -55,45 +60,53 @@ int main() {
                 continue;
             }
             printf("Диапазон (min max): ");
-            if (scanf_s("%d %d", &min, &max) != 2) {
-                printf("Некорректный диапазон!\n");
+            if (scanf_s("%d %d", &min, &max) != 2 || min > max) {
+                printf("Некорректный диапазон! Минимум должен быть меньше максимума.\n");
                 while (getchar() != '\n');
                 continue;
             }
+            if (original) free(original);
             original = create_array_random(size, min, max);
-            if (original) {
-                sorted = (int*)malloc(size * sizeof(int));
-                for (int i = 0; i < size; i++) sorted[i] = original[i];
-                result = shell_sort(sorted, size);
-                printf("Перестановок: %d, Время: %.6f мкс\n", result.swaps, result.time_mcs);
-            }
         }
         else if (choice == 3) {
-            if (!original || !sorted) {
-                printf("Ошибка: массивы не созданы!\n");
+            if (!original || size <= 0) {
+                printf("Ошибка: массив не создан!\n");
                 continue;
             }
-            save_results(original, sorted, size, result);
+
+            // Создаем временную копию для сортировки
+            int* temp = (int*)malloc(size * sizeof(int));
+            for (int i = 0; i < size; i++)
+                temp[i] = original[i];
+
+            result = shell_sort(temp, size);
+
+            // Заменяем оригинальный массив отсортированным
+            free(original);
+            original = temp;
+
+            printf("Сортировка завершена. Перестановок: %d, Время: %.6f мкс\n",
+                result.swaps, result.time_mcs);
         }
         else if (choice == 4) {
-            printf("Имя файла: ");
+            if (!original) {
+                printf("Ошибка: массив не создан!\n");
+                continue;
+            }
+            save_results(original, size);
+        }
+        else if (choice == 5) {
+            printf("Имя файла (без расширения): ");
             if (scanf_s("%99s", filename, (unsigned)_countof(filename)) != 1) {
                 printf("Ошибка ввода имени файла!\n");
                 while (getchar() != '\n');
                 continue;
             }
+            if (original) free(original);
             original = load_array_from_file(filename, &size);
-            if (original) {
-                sorted = (int*)malloc(size * sizeof(int));
-                for (int i = 0; i < size; i++) 
-                    sorted[i] = original[i];
-                result = shell_sort(sorted, size);
-                printf("Перестановок: %d, Время: %.3f мс\n", result.swaps, result.time_mcs);
-            }
         }
-        else if (choice == 5) {
+        else if (choice == 6) {
             free(original);
-            free(sorted);
             printf("Программа завершена\n");
             break;
         }

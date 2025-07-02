@@ -1,77 +1,98 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "sort.h"
+#include "file.h"
 
-// загрузка массива из файла
-int* load_array_from_file(const char* filename, int* size) {
+// Загрузка массива из файла
+int* load_array_from_file(const char* input_filename, int* size) {
+    char filename[260]; // Буфер для имени файла
+
+    // Копируем введённое имя
+    strncpy_s(filename, sizeof(filename), input_filename, _TRUNCATE);
+
+    // Добавляем .txt если нет расширения
+    if (strchr(filename, '.') == NULL) {
+        strcat_s(filename, sizeof(filename), ".txt");
+    }
+
     FILE* file;
-    fopen_s(&file, filename, "r");
+    if (fopen_s(&file, filename, "r") != 0) {
+        printf("Ошибка открытия файла %s!\n", filename);
+        return NULL;
+    }
 
-    // определяем размер файла
-    fseek(file, 0, SEEK_END); //переносимся в конец
-    long file_size = ftell(file);// считываем всю длину файла
-    fseek(file, 0, SEEK_SET); // обратно в начало
+    // Определяем размер файла
+    fseek(file, 0, SEEK_END);
+    long file_size = ftell(file);
+    fseek(file, 0, SEEK_SET);
 
-    // выделяем динамический буфер под файл
+    // Чтение файла
     char* buffer = (char*)malloc(file_size + 1);
     fread(buffer, 1, file_size, file);
     buffer[file_size] = '\0';
     fclose(file);
 
-    // убираем символ новой строки
-    if (buffer[file_size - 1] == '\n') {
+    // Убираем символ новой строки
+    if (file_size > 0 && buffer[file_size - 1] == '\n') {
         buffer[file_size - 1] = '\0';
     }
 
-    // считаем количество чисел
+    // Считаем количество чисел
     *size = 1;
     for (char* p = buffer; *p; p++) {
-        if (*p == ',') (*size)++; // 1+ количество запятых
+        if (*p == ',') (*size)++;
     }
 
-    // создаём массив чисел
+    // Создаём массив чисел
     int* arr = (int*)malloc(*size * sizeof(int));
+    if (!arr) {
+        free(buffer);
+        return NULL;
+    }
 
-    //разбиение строки
-    char* next_token = NULL; //нужно для безопасной версии strtok (для strtok_s)
+    // Разбиение строки
+    char* next_token = NULL;
     char* token = strtok_s(buffer, ",", &next_token);
 
     for (int i = 0; token && i < *size; i++) {
-        arr[i] = atoi(token); // преобразовать в число
+        arr[i] = atoi(token);
         token = strtok_s(NULL, ",", &next_token);
     }
 
-    free(buffer);  // о свобождаем буфер файла
+    free(buffer);
     return arr;
 }
 
-// сохранение массива в файл
+// Сохранение массива в файл
 void save_array_to_file(const char* filename, int arr[], int size) {
     FILE* file;
-    fopen_s(&file, filename, "w");
+    if (fopen_s(&file, filename, "w") != 0) {
+        printf("Ошибка создания файла!\n");
+        return;
+    }
 
     for (int i = 0; i < size; i++) {
         fprintf(file, "%d", arr[i]);
-        if (i < size - 1) fprintf(file, ","); //что бы запятая после каждого числа кроме последнего
+        if (i < size - 1) fprintf(file, ",");
     }
 
     fclose(file);
 }
 
-// Сохранение результатов
-void save_results(int original[], int sorted[], int size, SortResult result) {
-    char name[100];
-    printf("Введите базовое имя файлов: ");
-    scanf_s("%99s", name, (unsigned)sizeof(name));
-    //имена файлов
-    char orig_name[120], sorted_name[120];
-    sprintf_s(orig_name, sizeof(orig_name), "%s_original.txt", name);
-    sprintf_s(sorted_name, sizeof(sorted_name), "%s_sorted.txt", name);
-    //данные файлов
-    save_array_to_file(orig_name, original, size);
-    save_array_to_file(sorted_name, sorted, size);
+// Сохранение результатов (упрощённая версия)
+void save_results(int array[], int size) {
+    char filename[100];
+    printf("Введите имя файла (без расширения): ");
+    scanf_s("%99s", filename, (unsigned)sizeof(filename));
 
-    printf("Файлы сохранены:\n%s\n%s\n", orig_name, sorted_name);
-    printf("Перестановок: %d\nВремя: %.3f мс\n", result.swaps, result.time_mcs);
+    // Очистка буфера после scanf_s
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+
+    // Добавляем расширение .txt
+    char fullname[120];
+    sprintf_s(fullname, sizeof(fullname), "%s.txt", filename);
+
+    save_array_to_file(fullname, array, size);
+    printf("Файл сохранен: %s\n", fullname);
 }
