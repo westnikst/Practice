@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 1 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\Prak\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{AAFB54D4-3A01-41A6-891E-81CE0106C8B4}|Prak\\Prak.vcxproj|D:\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 1 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\Prak\\Prak\\file.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AAFB54D4-3A01-41A6-891E-81CE0106C8B4}|Prak\\Prak.vcxproj|solutionrelative:Prak\\file.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAFB54D4-3A01-41A6-891E-81CE0106C8B4}|Prak\\Prak.vcxproj|D:\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 1 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\Prak\\Prak\\Prak.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AAFB54D4-3A01-41A6-891E-81CE0106C8B4}|Prak\\Prak.vcxproj|solutionrelative:Prak\\Prak.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AAFB54D4-3A01-41A6-891E-81CE0106C8B4}|Prak\\Prak.vcxproj|D:\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 1 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\Prak\\Prak\\sort.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{AAFB54D4-3A01-41A6-891E-81CE0106C8B4}|Prak\\Prak.vcxproj|solutionrelative:Prak\\sort.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AAFB54D4-3A01-41A6-891E-81CE0106C8B4}|Prak\\Prak.vcxproj|D:\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 1 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\Prak\\Prak\\array.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{AAFB54D4-3A01-41A6-891E-81CE0106C8B4}|Prak\\Prak.vcxproj|solutionrelative:Prak\\array.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AAFB54D4-3A01-41A6-891E-81CE0106C8B4}|Prak\\Prak.vcxproj|D:\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 1 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\Prak\\Prak\\file.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AAFB54D4-3A01-41A6-891E-81CE0106C8B4}|Prak\\Prak.vcxproj|solutionrelative:Prak\\file.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AAFB54D4-3A01-41A6-891E-81CE0106C8B4}|Prak\\Prak.vcxproj|D:\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 1 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\Prak\\Prak\\sort.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{AAFB54D4-3A01-41A6-891E-81CE0106C8B4}|Prak\\Prak.vcxproj|D:\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 1 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\Prak\\Prak\\file.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{AAFB54D4-3A01-41A6-891E-81CE0106C8B4}|Prak\\Prak.vcxproj|solutionrelative:Prak\\file.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AAFB54D4-3A01-41A6-891E-81CE0106C8B4}|Prak\\Prak.vcxproj|D:\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 1 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\Prak\\Prak\\Prak.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AAFB54D4-3A01-41A6-891E-81CE0106C8B4}|Prak\\Prak.vcxproj|solutionrelative:Prak\\Prak.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,11 +38,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "file.h",
               "DocumentMoniker": "D:\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 1 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\Prak\\Prak\\file.h",
               "RelativeDocumentMoniker": "Prak\\file.h",
@@ -50,12 +50,11 @@
               "RelativeToolTip": "Prak\\file.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-27T17:11:27.495Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-27T17:11:27.495Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "sort.h",
               "DocumentMoniker": "D:\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 1 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\Prak\\Prak\\sort.h",
               "RelativeDocumentMoniker": "Prak\\sort.h",
@@ -63,12 +62,11 @@
               "RelativeToolTip": "Prak\\sort.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-27T17:11:07.42Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-27T17:11:07.42Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "array.h",
               "DocumentMoniker": "D:\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 1 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\Prak\\Prak\\array.h",
               "RelativeDocumentMoniker": "Prak\\array.h",
@@ -76,25 +74,24 @@
               "RelativeToolTip": "Prak\\array.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-27T17:10:45.581Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-27T17:10:45.581Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "file.cpp",
               "DocumentMoniker": "D:\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 1 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\Prak\\Prak\\file.cpp",
               "RelativeDocumentMoniker": "Prak\\file.cpp",
               "ToolTip": "D:\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 1 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\Prak\\Prak\\file.cpp",
               "RelativeToolTip": "Prak\\file.cpp",
-              "ViewState": "AgIAADwAAAAAAAAAAAAQwGEAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEYAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-27T17:01:14.815Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "sort.cpp",
               "DocumentMoniker": "D:\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 1 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\Prak\\Prak\\sort.cpp",
               "RelativeDocumentMoniker": "Prak\\sort.cpp",
@@ -107,7 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "array.cpp",
               "DocumentMoniker": "D:\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 1 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\Prak\\Prak\\array.cpp",
               "RelativeDocumentMoniker": "Prak\\array.cpp",
@@ -115,18 +112,17 @@
               "RelativeToolTip": "Prak\\array.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-27T17:00:53.09Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-27T17:00:53.09Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "Prak.cpp",
               "DocumentMoniker": "D:\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 1 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\Prak\\Prak\\Prak.cpp",
               "RelativeDocumentMoniker": "Prak\\Prak.cpp",
               "ToolTip": "D:\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 1 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\Prak\\Prak\\Prak.cpp",
               "RelativeToolTip": "Prak\\Prak.cpp",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAQwHMAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAQwFkAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-27T16:59:58.985Z",
               "EditorCaption": ""
