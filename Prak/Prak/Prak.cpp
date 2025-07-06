@@ -20,11 +20,19 @@ int main() {
         // Отображение текущего массива
         if (original && size > 0) {
             printf("Текущий массив (%d элементов): ", size);
-            int display_count = size > 30 ? 30 : size;
+            int display_count;
+            if (size > 30) {
+                display_count = 30;
+            }
+            else {
+                display_count = size;
+            }
+
             for (int i = 0; i < display_count; i++) {
                 printf("%d ", original[i]);
             }
-            if (size > 30) printf("...");
+            if (size > 30) 
+                printf("...");
             printf("\n");
         }
 
@@ -65,7 +73,7 @@ int main() {
                 while (getchar() != '\n');
                 continue;
             }
-            if (original) free(original);
+        
             original = create_array_random(size, min, max);
         }
         else if (choice == 3) {
@@ -73,18 +81,8 @@ int main() {
                 printf("Ошибка: массив не создан!\n");
                 continue;
             }
-
-            // Создаем временную копию для сортировки
-            int* temp = (int*)malloc(size * sizeof(int));
-            for (int i = 0; i < size; i++)
-                temp[i] = original[i];
-
-            result = shell_sort(temp, size);
-
-            // Заменяем оригинальный массив отсортированным
-            free(original);
-            original = temp;
-
+            // Сортируем массив напрямую
+            result = shell_sort(original, size);
             printf("Сортировка завершена. Перестановок: %d, Время: %.6f мкс\n",
                 result.swaps, result.time_mcs);
         }

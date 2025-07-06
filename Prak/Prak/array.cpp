@@ -25,8 +25,6 @@ int* create_array_random(int size, int min, int max) {
     }
 
     int* arr = (int*)malloc(size * sizeof(int));
-    if (!arr) return NULL;
-
     srand((unsigned int)time(NULL));
     for (int i = 0; i < size; i++) {
         arr[i] = rand() % (max - min + 1) + min;

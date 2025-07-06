@@ -8,7 +8,7 @@ int* load_array_from_file(const char* input_filename, int* size) {
     char filename[260]; // Буфер для имени файла
 
     // Копируем введённое имя
-    strncpy_s(filename, sizeof(filename), input_filename, _TRUNCATE);
+    strcpy_s(filename, sizeof(filename), input_filename);
 
     // Добавляем .txt если нет расширения
     if (strchr(filename, '.') == NULL) {
@@ -87,7 +87,7 @@ void save_results(int array[], int size) {
 
     // Очистка буфера после scanf_s
     int c;
-    while ((c = getchar()) != '\n' && c != EOF);
+    while ((c = getchar()) != '\n');
 
     // Добавляем расширение .txt
     char fullname[120];
